@@ -99,7 +99,7 @@ function PointVente() {
 
   const [region, setRegion] = useState(null);
   const [data, setData] = useState(null); //point de vente
-
+  
   useEffect(() => {
     regionService.getAll().then((res) => {
       setData(res.data.data);

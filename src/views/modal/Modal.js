@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import pointventeService from "../../services/pointvente.service";
 import produitService from "../../services/produit.service";
 
 var is_at = 0;
@@ -7,13 +8,19 @@ var target = "";
 var selection = false;
 export default function Modal({ sokafy }) {
   console.log(sokafy);
+  const [listpoint, setListPoint] = useState([]);
+  const [pointVenteId, setPointVenteId] = useState(0);
+  useEffect(() => {
+    pointventeService.getAll().then((res) => {
+      setListPoint(res.data.data);
+      console.log("liste point de vente :", res.data.data);
+    });
+  }, []);
 
   var data_ex = 0;
 
   const [nombre_etape, setNombre] = useState(3);
   const [index_at, setIndex] = useState(0);
-
-  useEffect(() => {}, []);
 
   const afficheo = (e, index) => {
     var tabcontent = document.getElementsByClassName("etapy");
@@ -476,6 +483,7 @@ export default function Modal({ sokafy }) {
 
   const onChangePhoto = (e) => {
     const fileList = [];
+
     for (let i = 0; i < e.target.files.length; i++) {
       fileList.push(e.target.files[i]);
     }
@@ -491,7 +499,7 @@ export default function Modal({ sokafy }) {
       quantite: quantite,
       description: description,
       image: images,
-      point_de_vente_id: 17,
+      point_de_vente_id: pointVenteId,
     };
 
     produitService.insertProduit(data).then((res) => {
@@ -580,7 +588,7 @@ export default function Modal({ sokafy }) {
             </div>
             <div className={"main_etape"}>
               Personnaliser
-              <div className={"coloriage_main"} style={{marginTop: "2rem"}}>
+              <div className={"coloriage_main"} style={{ marginTop: "2rem" }}>
                 <div className={"labouteille"}>{sary1}</div>
 
                 <div className={"personnalisation"}>
@@ -654,6 +662,16 @@ export default function Modal({ sokafy }) {
                 <option value={"Vin Blanc"}>Vin Blanc</option>
                 <option value={"Vin Rose"}>Vin Rose</option>
                 <option value={"Vin Orang"}>Vin Orange</option>
+              </select>
+            </div>
+            <div className={"nom_etape"}>
+              Point de vente :{" "}
+              <select onChange={(e) => setPointVenteId(e.target.value)}>
+                {listpoint.map((point) => (
+                  <option value={point.id} key={point.id}>
+                    {point.nom}
+                  </option>
+                ))}
               </select>
             </div>
             <div className={"nom_etape"}>
