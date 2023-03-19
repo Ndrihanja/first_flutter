@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function MadaMap(props) {
+  const [libele, setLibele] = useState("");
 
   const afficheo = (e) => {
-
     e.preventDefault();
     const region = {
       id: e.target.id,
       libelle: document.getElementById(e.target.id).classList[1],
     };
     props.onChildClick(region);
-    
   };
 
   return (
@@ -18,6 +17,9 @@ function MadaMap(props) {
       {/* <div >ATO mada</div> */}
 
       <div>
+        <div style={{ marginTop: "0rem", transform: "translateX(-80px)" }}>
+          Region: {libele}
+        </div>
         {/* <img src={mada} className="App-logo" /> */}
 
         <>
@@ -31,7 +33,7 @@ function MadaMap(props) {
             x="0px"
             y="0px"
             viewBox="0 0 692.7 1355.6"
-            style={{ enableBackground: "new 0 0 692.7 1355.6", height: "80vh" }}
+            style={{ enableBackground: "new 0 0 692.7 1355.6", height: "70vh" }}
             xmlSpace="preserve"
           >
             <style
@@ -132,6 +134,8 @@ function MadaMap(props) {
         c-0.3,0.3-0.7,0.6-1.1,0.7c-0.3,0.1-3,0.5-3,1.1l0.3,0.3l1.1,0.2l0.4,0.9l-1,0.5l-0.6,2.2C455.6,210.3,455.7,211,455.5,210.9
         L455.5,210.9z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Diana")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="2"
@@ -185,6 +189,8 @@ function MadaMap(props) {
         c0.1,1.1,0.2,2.1,0.3,3.2c0,0.1,0.2,0.4,0.2,0.5l0.8,3.3c0.3,1.2,0.7,2.4,1.2,3.5c0.1,0.3,0.4,0.6,0.5,0.9c0.4,1.2,0.5,1.4,0.8,2.7
         l1.6,0.8l0.1,1.2C655.2,396.3,655.5,396.6,655.8,396.9L655.8,396.9z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Sava")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="3"
@@ -215,6 +221,8 @@ function MadaMap(props) {
         c-1.1-0.2-2.1-0.3-3.2-0.5c-1.5-0.3-2.9-0.5-4.4-0.7c-1.3-0.1-2.6-0.2-3.9-0.2c-1,0.1-2-0.3-2.7-1
         C123.1,1321,122.8,1319,123.7,1317.4L123.7,1317.4z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Androy")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="4"
@@ -310,6 +318,8 @@ function MadaMap(props) {
         c-0.1-0.7-0.7-1.1-0.7-2.1c0-2.5,2.5-2.8,0.9-7.4c-0.3-0.9-0.7-3.5,0.3-4.1c0.5-1.1,0.7-2.4,0.5-3.6c-0.4-1.8-1.9-3.2-0.9-4
         s3.6-2.4,3.6-2.4l2.9-1.8C596.9,287.7,596.6,287.4,596.4,287.1L596.4,287.1z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Sofia")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="5"
@@ -370,6 +380,8 @@ function MadaMap(props) {
         l-2.1,2c-0.7,0.7-0.2,1.9-0.5,2.8c-0.4,0.9-1,1.8-1.7,2.5c-0.3,0.3-0.6,0.3-0.9,0.5c-0.7,0.5-1.2,1.3-1.2,2.2c0.2,2,2,2.7,2.1,4
         l-0.2,0.5c-0.1,0-0.4,0.3-0.4,0.3c-1,0.3-2,0.5-3,0.5C542.5,469.8,541.8,474.6,540.1,475.9L540.1,475.9z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Analanjirofo")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="6"
@@ -439,6 +451,8 @@ function MadaMap(props) {
         s0.9-2.2-0.2-3.1s-1.1-2-1.5-2.6c-1-1.1-2.1-2.2-3.2-3.2c-0.8-0.8-2.4-1-0.6-2.2s1.5-4.2,1.5-5.5s0.1-1.6-1.2-3.2s-3.5-4.8-4.5-5.5
         c-0.9-0.9-1.7-2-2.2-3.1l-2.2-3.7C160.7,421.1,161.5,420.9,162.3,420.8L162.3,420.8z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Boeny")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="7"
@@ -487,6 +501,8 @@ function MadaMap(props) {
         s-0.6-1.6-1.9-1.8s-1.9-2.6-0.5-3.4s1.4-1.8-0.2-3.2s-1.5-0.9-1.5-3.4c0.1-1.5-0.2-3-1-4.4c-0.5-0.9-0.9-8.4-1.1-10.5
         s-0.2-4.2,1-5.1s1.5-1.9,2.5-2.8c0.5-0.4,1-0.7,1.5-1C225.1,502.1,225.9,501.8,226.7,501.6L226.7,501.6z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Betsiboka")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="8"
@@ -550,6 +566,8 @@ function MadaMap(props) {
         c-0.1,1.4,0.2,1.9,0.2,3.1c0,1.3-0.2,2.8-0.2,4.1c0.1,1,0.5,1.9,0.6,2.8s-0.6,1.8-0.2,2.8c0.4,0.3,0.6,0.8,1,1.1
         c0.1,0.9,0.3,1.8,0.7,2.7c0.3,0.4,0.7,0.5,1,1c0.3,0.7,0.1,1.5,0.4,2.3c2.4,0.1,3.6,1.9,4.9,2.1L106.6,717.3z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Melaky")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="9"
@@ -606,6 +624,8 @@ function MadaMap(props) {
         s1.1,0.5,1.2,1.6c0.1,1.2,0.4,2.4,0.9,3.5c0.5,0.7,0.6,1.7,0.2,2.5c-0.4,1-0.4,2.1,0,3.1C535.7,581.1,536,582.3,534.4,583.4
         L534.4,583.4z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Alaotramangoro")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="10"
@@ -639,6 +659,8 @@ function MadaMap(props) {
         c-1.1,0.3-2.2,0.3-3.3,0.7c-0.5,0.1-0.7,0.7-1.8,0.9c-1.7,0.3-2-0.6-3.3-0.3l-0.7,0.7c-1.6,0-3.1-0.2-4.6-0.7
         c-0.2-0.6-0.7-1.2-1.3-1.5c-0.9,0.6-0.6,1.9-1.6,2.5c-0.7,0-1.4,0.3-1.9,0.8C312.3,579.9,312.4,582.1,312.5,584.2L312.5,584.2z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Analamanga")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="11"
@@ -687,6 +709,8 @@ function MadaMap(props) {
         l-0.3-1.4l-0.6-2.6l-1.2-2.5c-0.5-1.1-0.8-2.3-1-3.5c0-1.2,4.2-2.8,5.5-3.8s5.2-3.8,6.2-4.5c1.1-0.9,2.4-1.6,3.8-2
         c1.2-0.2,4.5-1.4,4.5-1.4l0.5-1.3l0.3-2.1c0.4-3-0.3-2.8-0.4-4.8c3.4,1.3,2.3,8,5.7,7.6L444.8,779.4z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Antsinanana")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="12"
@@ -727,6 +751,8 @@ function MadaMap(props) {
         l-1-0.1l-1.2,1.5l-0.9,0l-1-1.7c-0.7-0.2-1.4-0.4-2.1-0.7c-0.6-0.3-0.7-0.9-1.9-0.9c-1,0.1-1.5,1.3-2,1.9c-0.2,0.2-0.6,0.3-0.8,0.5
         c-0.7,0.6-1.1,1.6-1,2.5c-0.4,0.6-0.8,1.2-1.4,1.6L224.6,630.1L224.6,630.1z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Bongolava")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="13"
@@ -749,6 +775,8 @@ function MadaMap(props) {
         c0.2,0,0.2-0.1,0.4,0c0.6,0.4,0,0.7,0,0.7l0.6,1.4c0,0-0.9,0.8-1.4,1.1s-0.2,2.5-0.1,3.4s2.4,0.5,3.8,0.5s4,2,4,2
         c0.9,0.9,1.6,2,2.1,3.1c0.6,1.5,1,1.9,1,2.4s1.8,4.1-0.9,6.4s0.8,2.8,2,2.9s0.4,4.5,0.2,5.4S404.3,721.3,404.3,722.4L404.3,722.4z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Itasy")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="14"
@@ -784,6 +812,8 @@ function MadaMap(props) {
         c0.2,2.4,0.9,2.1,0.5,5.2l-0.3,2.1l-0.5,1.3c0,0-3.2,1.2-4.5,1.4c-1.4,0.4-2.6,1.1-3.8,2c-1,0.8-5,3.5-6.2,4.5s-5.5,2.5-5.5,3.8
         c0.2,1.2,0.5,2.4,1,3.5l1.2,2.5l0.6,2.7C420.1,800.1,418,802.3,417.2,803.3L417.2,803.3z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Vakinakaratra")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="15"
@@ -858,6 +888,8 @@ function MadaMap(props) {
         c-0.1,0.4-0.1,0.9-0.1,1.3l-0.3,0.3l-0.4-0.3c-0.9-0.1-1.8,0.2-2.5,0.8c-0.3,0.8,0.5,1.4,0.1,2.2c-0.3,0.1-0.5,0.4-0.6,0.7
         C32.7,934.8,34.2,934,35.8,936.2L35.8,936.2z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Menabe")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="16"
@@ -901,6 +933,8 @@ function MadaMap(props) {
         c-0.6,1.3-0.8,2.7-0.5,4.1c0.5,1.7,1,3.3,1.8,4.9c0.5,1,0.5,1.5,1.1,1.8s3.8,0.8,3.8,0.8C396.2,894.8,398,895.3,398.9,895.2
         L398.9,895.2z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Amoron'i Mania")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="17"
@@ -935,6 +969,8 @@ function MadaMap(props) {
         s-1.1-0.9-2-1.4s-3.4-1.9-3.4-1.9l-1.9,2.1l-2.5,2.6h-1.9c-0.9,0-1.5-0.5-1.5,0.6s0.2,4.6,0.2,4.6c0.2-0.9-1.8-0.1-3.8-0.2
         L365.4,1012.5z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Haute Matsiatra")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="18"
@@ -1018,6 +1054,8 @@ function MadaMap(props) {
         c0.5-2.9,3.3-2.6,5.5-2.6c1.1,0,3.5-0.5,4.2-1.3l0.4-1c-0.3-0.9-0.5-1.9-0.5-2.8l0.2-0.5c0.4-0.1,0.7-0.2,1-0.3
         c0.5-0.1,1-0.4,1.4-0.7c0.7-0.9,0.1-3.5-0.1-4.5L222.6,954.5z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Atsimo Andrefana")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="19"
@@ -1068,6 +1106,8 @@ function MadaMap(props) {
         c0.4,0.6,0.2,1.6,0.4,2.3s1.1,1.3,1.4,2c0.5,1.3,0,1.7,1,3c1.3,0.5,2.4-0.3,3.6-0.2c3.3,0.2,2.1,1.8,5.9-0.4
         C203,1107.9,203.6,1106.9,204.9,1107.4L204.9,1107.4z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Ihorombe")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="20"
@@ -1122,6 +1162,8 @@ function MadaMap(props) {
         c-0.9-1.2-2.8-0.6-4-1.6c-0.5-1.5-0.3-3.2,0.5-4.6c0.1-0.3,0.4-0.6,0.5-0.8c0.5-1.4,0.7-2.8,1.6-4c0.5-0.5,0.9-1,1.2-1.6
         c0.4-1.4,1-2.7,1.6-3.9c0.7-1,2.4-1.8,2.8-2.8c0.3-1.6,0.4-3.3,0.1-5l-1.5-1.3L309.6,1154.9z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Anosy")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="21"
@@ -1160,6 +1202,8 @@ function MadaMap(props) {
         l-0.2,0.5c0.1,0.3,0.3,0.6,0.5,0.9c0.6,0.2,1.2,0.3,1.8,0.1l0.4,0.2l0.1,0.6c-0.6,1.2-1.3,2.4-2,3.6c-0.5,0.9-0.9,1.9-1.4,2.8
         c-0.3,0.4-0.6,0.8-0.9,1.3C398,1208.5,396.3,1207,394.4,1205.7L394.4,1205.7z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Atsimo Atsinanana")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="22"
@@ -1188,6 +1232,8 @@ function MadaMap(props) {
         c2.5,2.4-0.3,4.9,2,6.7c0.4,0.4,1.8,0.2,2.4,0.4c1.1,0.4,2.2,0.7,3.3,0.9c2.1,0.2,4.1-0.1,6.1-0.1c0.8,0,1.7,0.2,2.6,0.2
         C504.5,839.5,509.3,841,509.9,841.3z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Vatovavy")}
+              onMouseLeave={() => setLibele("")}
             />
             <path
               id="23"
@@ -1209,6 +1255,8 @@ function MadaMap(props) {
         c3.8,2.2,5.3,1.3,7.3,2.3c2,1,5.2,2.9,7.4,3.9c2.1,0.9,4.2-0.4,8.6-2.8c4.4-2.4,6.5-1,7.5,1.4c1,2.4-2.4,5.4,0,6.1
         c2.4,0.7,10.4,2.6,14.6,1.7C473,965.9,474.4,965.6,475.4,965.3z"
               onClick={afficheo}
+              onMouseEnter={() => setLibele("Fitovinany")}
+              onMouseLeave={() => setLibele("")}
             />
           </svg>
         </>

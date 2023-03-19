@@ -128,7 +128,11 @@ function PointVente() {
                 >
                   <div
                     className={"form_etape"}
-                    style={{ width: "100%", height: "85vh" }}
+                    style={{
+                      width: "100%",
+                      height: "90vh",
+                      marginTop: "-35px",
+                    }}
                   >
                     <div className={"form_etape_head"}>
                       <div className={"form_bt_center"}>
