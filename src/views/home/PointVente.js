@@ -162,7 +162,10 @@ function PointVente() {
                           }}
                           onClick={handleButtonClick}
                         >
-                          <MadaMap setCurrentPosition={setCurrentPosition} />
+                          <MadaMap
+                            onChildClick={handleChildClick}
+                            setCurrentPosition={setCurrentPosition}
+                          />
                         </div>
                       </div>
                       <div
